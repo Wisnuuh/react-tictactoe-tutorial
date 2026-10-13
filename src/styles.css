@@ -1,0 +1,12 @@
+.square {
+    color: black;
+    font-weight: 600;
+    background-color: white;
+    border: .1px solid black;
+    width: 40px;
+}
+
+.board-row {
+    display: flex;    
+    height: 40px;    
+}
