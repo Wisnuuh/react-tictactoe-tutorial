@@ -8,7 +8,7 @@ function Square({ value, onSquareClick }) {
     );
 }
 
-function Board({ xIsNext, squares, onPlay }) {
+function Board({ xIsNext, squares, onPlay, currentMove }) {
     const winner = calculateWinner(squares);
 
     let status;
@@ -58,6 +58,7 @@ function Board({ xIsNext, squares, onPlay }) {
     return (
         <>
             <div className="status">{status}</div>
+            <div className="status">You are at move #{currentMove + 1}</div>
             <div className="board-row board">
                 <Square
                     value={squares[0]}
@@ -142,6 +143,7 @@ export default function game() {
                     xIsNext={xIsNext}
                     squares={currentSquares}
                     onPlay={handlePlay}
+                    currentMove={currentMove}
                 />
             </div>
             <div className="game-info">
